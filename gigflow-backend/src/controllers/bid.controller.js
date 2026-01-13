@@ -27,18 +27,16 @@ export const hireBid = async (req, res) => {
     const gig = await Gig.findById(bid.gigId).session(session);
     if (gig.status === "assigned") throw new Error("Already assigned");
 
-    // hire this bid
     bid.status = "hired";
     await bid.save({ session });
 
-    // reject others
     await Bid.updateMany(
       { gigId: gig._id, _id: { $ne: bid._id } },
       { status: "rejected" },
       { session }
     );
 
-    // update gig
+    
     gig.status = "assigned";
     await gig.save({ session });
 

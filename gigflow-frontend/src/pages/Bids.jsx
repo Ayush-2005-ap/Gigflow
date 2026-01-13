@@ -33,7 +33,6 @@ export default function Bids() {
     <Layout>
       <h2 className="text-2xl font-bold mb-6">Bids</h2>
 
-      {/* Place Bid Form */}
       <div className="bg-white p-5 rounded-xl shadow mb-6">
         <h3 className="font-semibold mb-3">Place a Bid</h3>
         <form onSubmit={submitBid} className="space-y-3">
@@ -55,7 +54,6 @@ export default function Bids() {
         </form>
       </div>
 
-      {/* Existing Bids */}
       <div className="space-y-4">
         {bids.map(b => (
           <div key={b._id} className="bg-white p-5 rounded-xl shadow flex justify-between items-center">
