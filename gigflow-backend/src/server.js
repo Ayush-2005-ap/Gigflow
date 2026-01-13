@@ -14,10 +14,12 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: "https://gigflow-skcw.vercel.app/",   // 👈 your frontend URL
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
+  origin: [
+    "http://localhost:5173",
+    "https://gigflow-5zf5.vercel.app",
+    "https://gigflow-skcv.vercel.app",
+  ],
+  credentials: true,
 }));
 
 app.use(express.json());
@@ -32,5 +34,3 @@ app.get("/", (req, res) => res.send("GigFlow API running"));
 app.listen(process.env.PORT, () =>
   console.log(`Server running on ${process.env.PORT}`)
 );
-
-
