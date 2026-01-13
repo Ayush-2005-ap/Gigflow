@@ -1,26 +1,43 @@
-# 🚀 GigFlow – Mini Freelance Marketplace Platform
+🚀 GigFlow – Mini Freelance Marketplace Platform
 
-GigFlow is a mini freelance marketplace platform built as part of the **Full Stack Development Internship Assignment** for **ServiceHive**.  
-The platform allows clients to post gigs and freelancers to bid on them, with a complete hiring workflow implemented using secure and atomic backend logic.
-
+GigFlow is a mini freelance marketplace platform built as part of the Full Stack Development Internship Assignment for ServiceHive.
+The platform enables clients to post gigs and freelancers to bid on them, with a secure and scalable hiring workflow powered by a modern full-stack architecture.
 ---
 
-## 🛠️ Tech Stack
 
-### Frontend
-- React.js (Vite)
-- Tailwind CSS
+🌐 Live Demo
 
-### Backend
-- Node.js
-- Express.js
-- MongoDB (Mongoose)
+Frontend: https://gigflow-5zf5.vercel.app
 
-### Others
-- JWT Authentication (HttpOnly Cookies)
-- RESTful APIs
-- MongoDB Transactions (for atomic hiring logic)
+Backend API: https://gigflow-4ohh.onrender.com
 
+--- 
+🛠️ Tech Stack
+Frontend
+
+React.js (Vite)
+
+Tailwind CSS
+
+Axios
+
+Backend
+
+Node.js
+
+Express.js
+
+MongoDB (Mongoose)
+
+Others
+
+JWT Authentication (HttpOnly Cookies)
+
+RESTful APIs
+
+MongoDB Transactions (Atomic operations)
+
+CORS-secured deployment
 ---
 
 ## ✨ Core Features
@@ -50,4 +67,60 @@ When a client hires a freelancer:
 ---
 
 ## 📂 Project Structure
+
+GigFlow/
+│
+├── gigflow-backend/
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── db.js
+│   │   ├── controllers/
+│   │   │   ├── auth.controller.js
+│   │   │   ├── gig.controller.js
+│   │   │   └── bid.controller.js
+│   │   ├── middleware/
+│   │   │   └── auth.middleware.js
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   ├── Gig.js
+│   │   │   └── Bid.js
+│   │   ├── routes/
+│   │   │   ├── auth.routes.js
+│   │   │   ├── gig.routes.js
+│   │   │   └── bid.routes.js
+│   │   └── server.js
+│   ├── package.json
+│   └── .env.example
+│
+├── gigflow-frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── api.js
+│   │   └── main.jsx
+│   ├── index.html
+│   └── package.json
+│
+└── README.md
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_key
+NODE_ENV=production
+
+VITE_API_URL=https://your-backend.onrender.com
+
+git clone https://github.com/Ayush-2005-ap/Gigflow.git
+cd Gigflow
+
+
+cd gigflow-backend
+npm install
+npm run dev
+
+
+cd ../gigflow-frontend
+npm install
+npm run dev
+
 
