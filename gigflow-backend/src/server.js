@@ -14,11 +14,10 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://gigflow-nu.vercel.app"   // 👈 your frontend
-  ],
-  credentials: true,
+  origin: "https://gigflow-skcw.vercel.app/",   // 👈 your frontend URL
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
 }));
 
 app.use(express.json());
